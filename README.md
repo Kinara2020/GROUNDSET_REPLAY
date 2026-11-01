@@ -165,13 +165,10 @@ No external UI framework is required.
 
 
 Project structure
-///
+```text
 GROUNDSET_REPLAY/
-│
 ├── public/
-│
 ├── src/
-│   │
 │   ├── components/
 │   │   ├── ApplicantPicker.jsx
 │   │   ├── DecisionBadge.jsx
@@ -179,23 +176,18 @@ GROUNDSET_REPLAY/
 │   │   ├── SlmPanel.jsx
 │   │   ├── RuleEngine.jsx
 │   │   ├── RoutingPanel.jsx
-│   │   ├── AuditPanel.jsx
-│   │   └── Footer.jsx
-│   │
+│   │   └── AuditPanel.jsx
 │   ├── data/
 │   │   └── applicants.js
-│   │
 │   ├── utils/
 │   │   └── evaluate.js
-│   │
 │   ├── App.jsx
 │   ├── App.css
 │   └── main.jsx
-│
 ├── index.html
 ├── package.json
 └── README.md
-///
+```
 
 What the main files are responsible for
 
