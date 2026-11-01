@@ -165,7 +165,7 @@ No external UI framework is required.
 
 
 Project structure
-
+///
 GROUNDSET_REPLAY/
 │
 ├── public/
@@ -195,6 +195,7 @@ GROUNDSET_REPLAY/
 ├── index.html
 ├── package.json
 └── README.md
+///
 
 What the main files are responsible for
 
