@@ -1,9 +1,67 @@
-body{
-  margin:0;
-  font-family:Inter,sans-serif;
-  background:#0d0b16;
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #303B40;
+  background: #F7F7F3;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --paper: #F7F7F3;
+  --surface: #FFFFFF;
+  --ink: #303B40;
+  --muted: #737D80;
+  --muted-strong: #59666B;
+  --blue: #55758A;
+  --blue-deep: #405F73;
+  --blue-wash: #EEF2F3;
+  --line: #E3E6E2;
+  --line-strong: #D4DAD7;
+  --green: #5D7864;
+  --amber: #96784D;
+  --red: #9B625D;
 }
 
-button{
-  font-family:inherit;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  background: var(--paper);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible, a:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  color: #26343B;
+  background: #DCE6E8;
 }
