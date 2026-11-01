@@ -1,77 +1,96 @@
-/* ==========================================
-   GROUNDSET — ORIGINAL LAYOUT, REFINED THEME
-========================================== */
+/* =========================================
+   GROUNDSET — RESPONSIVE APP STYLES
+   Desktop | iPad | Mobile
+========================================= */
 
-html, body, #root {
-  background: #F1F5F9 !important;
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
   margin: 0;
   padding: 0;
+  background: #F1F5F9 !important;
 }
 
 body {
-  margin: 0;
   font-family: 'Inter', sans-serif;
+  color: #172B4D;
   background: #F1F5F9;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font: inherit;
+}
+
+/* Main layout */
+
+.app {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 28px 40px;
   color: #172B4D;
 }
 
-.app {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 24px 60px;
-}
-
-/* HEADER */
+/* Header */
 
 .topbar {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  padding: 24px 0;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 17px 24px;
+  margin: 0 -28px;
   background: #E8EFF8;
-  border-bottom: 1px solid #CBD8E8;
-  margin: 0 -24px;
-  padding-left: 24px;
-  padding-right: 24px;
+  border-bottom: 1px solid #D5DFEC;
 }
 
 .wordmark {
-  font-size: 21px;
-  font-weight: 800;
-  color: #173B67;
+  font-size: 19px;
+  font-weight: 750;
+  color: #1E3A5F;
+  letter-spacing: -0.4px;
 }
 
 .wordmark span {
-  font-size: 13px;
-  font-weight: 700;
-  color: #426487;
-  margin-left: 8px;
+  font-size: 11px;
+  font-weight: 650;
+  color: #52647D;
+  margin-left: 9px;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.07em;
 }
 
 .tag {
-  font-size: 12px;
-  color: #426487;
-  font-weight: 700;
+  font-size: 11px;
+  color: #475569;
+  font-weight: 650;
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
 
-/* HERO */
+/* Hero section */
 
 .hero {
-  padding: 40px 0 24px;
-  max-width: 680px;
+  padding: 34px 0 20px;
+  max-width: 760px;
 }
 
 .hero h1 {
-  font-size: 39px;
-  line-height: 1.2;
-  margin: 0 0 15px;
+  font-size: clamp(27px, 3.2vw, 36px);
+  line-height: 1.18;
+  margin: 0 0 13px;
   font-weight: 750;
-  color: #172B4D;
   letter-spacing: -0.8px;
+  color: #172B4D;
+  overflow-wrap: break-word;
 }
 
 .accent {
@@ -79,92 +98,147 @@ body {
 }
 
 .heroSub {
-  color: #475569;
-  font-size: 16px;
-  line-height: 1.75;
+  color: #52647D;
+  font-size: 15px;
+  line-height: 1.65;
   margin: 0;
+  max-width: 720px;
 }
 
 .heroMeta {
-  font-size: 13px;
-  color: #426487;
+  font-size: 12px;
+  color: #64748B;
   margin-top: 12px;
-  font-family: 'Inter', sans-serif;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
-/* APPLICANT SELECTOR */
+/* Applicant selection */
 
 .picker {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
-  margin: 24px 0;
+  margin: 20px 0;
 }
 
 .pickBtn {
-  border: 1px solid #CBD5E1;
+  flex: 1 1 170px;
+  min-width: 0;
+  border: 1px solid #D7E0EC;
   background: #FFFFFF;
-  padding: 13px 17px;
-  border-radius: 8px;
+  color: #243B5A;
+  padding: 12px 15px;
+  border-radius: 10px;
   cursor: pointer;
   text-align: left;
-  transition: 0.2s ease;
+  transition: border-color 0.2s, background 0.2s;
 }
 
 .pickBtn .pickName {
   display: block;
-  font-size: 15px;
-  font-weight: 700;
-  color: #172B4D;
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.4;
 }
 
 .pickBtn .pickMeta {
   display: block;
-  font-size: 13px;
+  font-size: 12px;
   color: #64748B;
   margin-top: 4px;
+  line-height: 1.4;
 }
 
 .pickBtn.active {
-  border: 1.5px solid #2563EB;
+  border-color: #2563EB;
   background: #EAF1FF;
 }
 
 .pickBtn:hover {
-  border-color: #6090E8;
-  background: #F5F8FF;
+  border-color: #7EA5EF;
 }
 
-/* FIVE STAGES */
+/* Applicant row and decision badge */
+
+.pickerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.decisionBadge {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 5px 12px;
+  border: 1px solid #D5DFEC;
+  border-radius: 10px;
+  padding: 11px 15px;
+  font-size: 12px;
+  background: #FFFFFF;
+}
+
+.decisionBadge.approve {
+  border-color: #86C9A2;
+  background: #EFFAF3;
+}
+
+.decisionBadge.review {
+  border-color: #E9C77A;
+  background: #FFF8E8;
+}
+
+.decisionBadge.reject {
+  border-color: #E8A0A0;
+  background: #FFF1F1;
+}
+
+.badgeLabel {
+  color: #64748B;
+}
+
+.badgeValue {
+  font-weight: 700;
+  color: #172B4D;
+}
+
+/* Five decision stages */
 
 .processFlow {
   display: flex;
-  gap: 10px;
-  margin: 24px 0;
+  gap: 9px;
+  margin: 20px 0;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .step {
-  border: 1px solid #CBD5E1;
+  flex: 1 1 145px;
+  min-width: 0;
+  border: 1px solid #D7E0EC;
   background: #FFFFFF;
-  padding: 13px 16px;
-  border-radius: 8px;
+  padding: 12px 13px;
+  border-radius: 9px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 13px;
+  line-height: 1.4;
   font-weight: 600;
-  color: #334155;
-  transition: 0.2s ease;
+  color: #334A68;
+  transition: background 0.2s, border-color 0.2s;
+  text-align: left;
+  overflow-wrap: break-word;
 }
 
 .stepNum {
   color: #2563EB;
-  font-weight: 800;
+  font-weight: 750;
   margin-right: 5px;
 }
 
 .step:hover {
-  border-color: #6090E8;
+  border-color: #7EA5EF;
   background: #F5F8FF;
 }
 
@@ -172,7 +246,6 @@ body {
   background: #2563EB;
   color: #FFFFFF;
   border-color: #2563EB;
-  box-shadow: 0 2px 7px rgba(37, 99, 235, 0.18);
 }
 
 .step.active .stepNum {
@@ -180,62 +253,71 @@ body {
 }
 
 .step.done {
-  border-color: #9DB9E8;
-  background: #EAF1FF;
-  color: #1D4ED8;
+  border-color: #A9BFE8;
+  color: #2456A6;
+  background: #EDF4FF;
 }
 
-/* MAIN CONTENT */
+/* Main content panel */
 
 .content {
+  width: 100%;
   background: #FFFFFF;
-  padding: 28px;
-  border-radius: 12px;
-  border: 1px solid #D8E1EC;
-  min-height: 320px;
-  box-shadow: 0 3px 12px rgba(23, 43, 77, 0.04);
+  padding: 24px;
+  border-radius: 14px;
+  border: 1px solid #DCE4EF;
+  min-height: 280px;
+  box-shadow: 0 3px 12px rgba(30, 58, 95, 0.035);
+  overflow-wrap: break-word;
 }
 
 .panelTitle {
-  margin: 0 0 8px;
-  font-size: 24px;
-  color: #172B4D;
-  font-weight: 750;
+  margin: 0 0 7px;
+  font-size: 21px;
+  line-height: 1.3;
+  color: #1E3556;
+  font-weight: 700;
 }
 
 .panelSub {
-  margin: 0 0 20px;
+  margin: 0 0 18px;
   color: #64748B;
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: 14px;
+  line-height: 1.55;
 }
 
-/* DOCUMENT CARD */
+/* Document card */
 
 .docCard {
-  background: #F8FAFD;
+  background: #F5F8FC;
   border: 1px solid #DCE4EF;
-  border-radius: 8px;
-  padding: 18px 20px;
+  border-radius: 10px;
+  padding: 16px 18px;
+  min-width: 0;
 }
 
 .docFileBar {
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  color: #426487;
-  background: #EAF1F8;
-  padding: 9px 12px;
+  font-family: monospace;
+  font-size: 12px;
+  color: #52647D;
+  background: #EAF0F7;
+  padding: 8px 10px;
   border-radius: 6px;
   margin-bottom: 12px;
+  overflow-wrap: anywhere;
 }
+
+/* Extracted fields */
 
 .fieldRow {
   display: flex;
   justify-content: space-between;
-  padding: 11px 0;
-  border-bottom: 1px solid #E2E8F0;
-  font-size: 15px;
-  gap: 15px;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px dashed #DCE4EF;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .fieldRow:last-child {
@@ -243,23 +325,16 @@ body {
 }
 
 .fieldRow span:first-child {
-  color: #52657D;
+  color: #64748B;
 }
-
-.fieldRow span:last-child {
-  color: #172B4D;
-  font-weight: 600;
-  text-align: right;
-}
-
-/* CONFIDENCE */
 
 .confBadge {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   padding: 4px 8px;
-  border-radius: 5px;
-  margin-left: 6px;
+  border-radius: 999px;
+  margin-left: 5px;
+  white-space: nowrap;
 }
 
 .confBadge.high {
@@ -285,10 +360,11 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-wrap: wrap;
 }
 
 .confBarTrack {
-  width: 65px;
+  width: 60px;
   height: 7px;
   background: #E2E8F0;
   border-radius: 999px;
@@ -313,25 +389,13 @@ body {
   background: #DC2626;
 }
 
-.sourceLine {
-  color: #64748B;
-  font-size: 12px;
-}
-
-/* RULE ENGINE */
-
-.engineStatus {
-  font-size: 13px;
-  color: #2563EB;
-  font-family: 'Inter', sans-serif;
-  margin-bottom: 12px;
-}
+/* Policy rules */
 
 .ruleRow {
   display: flex;
   gap: 12px;
-  padding: 13px 4px;
-  border-bottom: 1px solid #E2E8F0;
+  padding: 11px 4px;
+  border-bottom: 1px solid #E5EAF1;
 }
 
 .ruleRow:last-child {
@@ -342,7 +406,7 @@ body {
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  margin-top: 5px;
+  margin-top: 6px;
   flex-shrink: 0;
 }
 
@@ -355,56 +419,54 @@ body {
 }
 
 .ruleLabel {
-  font-size: 15px;
-  font-weight: 700;
-  color: #172B4D;
+  font-size: 14px;
+  font-weight: 650;
+  color: #243B5A;
+  line-height: 1.45;
 }
 
 .ruleDetail {
-  font-size: 14px;
+  font-size: 13px;
   color: #64748B;
   margin-top: 4px;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
-.whyBox {
-  margin-top: 16px;
-  padding: 14px 17px;
-  background: #EDF4FF;
-  border-left: 3px solid #2563EB;
-  font-size: 14px;
-  color: #334E70;
-  border-radius: 6px;
-  line-height: 1.7;
+.engineStatus {
+  font-size: 12px;
+  color: #2563EB;
+  font-family: monospace;
+  margin-bottom: 12px;
 }
 
-/* VERDICT */
+/* Final decision */
 
 .verdictCard {
-  border-radius: 9px;
-  padding: 20px;
+  border-radius: 10px;
+  padding: 18px;
   border: 1px solid;
 }
 
 .verdictCard.approve {
-  background: #F0FDF4;
-  border-color: #86EFAC;
+  background: #EFFAF3;
+  border-color: #9BD5AE;
 }
 
 .verdictCard.review {
-  background: #FFFBEB;
-  border-color: #FDE68A;
+  background: #FFF8E8;
+  border-color: #E9C77A;
 }
 
 .verdictCard.reject {
-  background: #FEF2F2;
-  border-color: #FCA5A5;
+  background: #FFF1F1;
+  border-color: #E8A0A0;
 }
 
 .verdictTitle {
-  font-size: 24px;
+  font-size: 21px;
   font-weight: 750;
-  margin-bottom: 8px;
+  margin-bottom: 7px;
+  line-height: 1.35;
 }
 
 .verdictCard.approve .verdictTitle {
@@ -420,124 +482,93 @@ body {
 }
 
 .verdictRoute {
-  font-size: 15px;
+  font-size: 14px;
   color: #334155;
-  line-height: 1.7;
+  line-height: 1.55;
 }
 
 .verdictReason {
-  font-size: 14px;
-  color: #334155;
+  font-size: 13px;
+  color: #475569;
   margin-top: 9px;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
-/* AUDIT */
+/* Audit information */
 
 .auditRow {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 8px;
-  font-size: 13px;
-  color: #52657D;
+  gap: 8px 14px;
+  font-size: 12px;
+  color: #52647D;
   margin-top: 14px;
   padding-top: 14px;
   border-top: 1px solid #DCE4EF;
-  font-family: 'Inter', sans-serif;
+  font-family: monospace;
+  line-height: 1.6;
 }
 
-/* ACTION BUTTON */
+.whyBox {
+  margin-top: 16px;
+  padding: 13px 15px;
+  background: #EDF4FF;
+  border-left: 3px solid #2563EB;
+  font-size: 13px;
+  color: #334A68;
+  border-radius: 6px;
+  line-height: 1.6;
+}
+
+/* Replay button */
 
 .actionsRow {
-  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
 }
 
 .replayBtn {
   background: #2563EB;
   color: #FFFFFF;
   border: none;
-  padding: 14px 23px;
-  border-radius: 7px;
+  padding: 12px 20px;
+  min-height: 44px;
+  border-radius: 9px;
   cursor: pointer;
-  font-weight: 700;
-  font-size: 15px;
-  transition: 0.2s ease;
+  font-weight: 650;
+  font-size: 14px;
+  transition: background 0.2s, transform 0.2s;
 }
 
 .replayBtn:hover {
   background: #1D4ED8;
 }
 
-.replayBtn:disabled {
-  opacity: 0.65;
-  cursor: wait;
+.replayBtn:active {
+  transform: translateY(1px);
 }
 
-/* FOOTER */
+/* Footer */
 
 .siteFooter {
-  margin-top: 40px;
-  padding: 20px 24px;
+  margin-top: 28px;
+  padding: 18px 20px;
   background: #E8EFF8;
-  border-top: 1px solid #CBD8E8;
-  border-radius: 8px;
-  font-size: 14px;
-  color: #334E70;
+  border: 1px solid #D5DFEC;
+  border-radius: 10px;
+  font-size: 13px;
+  color: #475569;
   line-height: 1.7;
 }
 
 .siteFooter strong {
-  color: #172B4D;
-  font-weight: 750;
+  color: #1E3556;
+  font-weight: 700;
 }
 
-/* APPLICANT STATUS */
-
-.pickerRow {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin: 24px 0;
-}
-
-.decisionBadge {
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 5px 12px;
-  border: 1px solid;
-  border-radius: 8px;
-  padding: 12px 16px;
-  font-size: 13px;
-}
-
-.decisionBadge.approve {
-  border-color: #86EFAC;
-  background: #F0FDF4;
-}
-
-.decisionBadge.review {
-  border-color: #FDE68A;
-  background: #FFFBEB;
-}
-
-.decisionBadge.reject {
-  border-color: #FCA5A5;
-  background: #FEF2F2;
-}
-
-.badgeLabel {
-  color: #64748B;
-}
-
-.badgeValue {
-  font-weight: 750;
-  color: #172B4D;
-}
-
-/* ANIMATION */
+/* Animation */
 
 .ruleFire {
   animation: reveal 0.3s ease forwards;
@@ -555,52 +586,243 @@ body {
   }
 }
 
-/* RESPONSIVE */
+/* =========================================
+   TABLETS — iPad
+========================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .app {
-    padding-left: 18px;
-    padding-right: 18px;
+    max-width: 100%;
+    padding: 0 22px 32px;
+  }
+
+  .topbar {
+    margin-left: -22px;
+    margin-right: -22px;
+    padding: 16px 22px;
+  }
+
+  .hero {
+    padding-top: 28px;
   }
 
   .hero h1 {
-    font-size: 32px;
+    font-size: clamp(27px, 4vw, 32px);
   }
 
   .content {
-    padding: 20px;
-  }
-
-  .processFlow {
-    gap: 8px;
+    padding: 21px;
   }
 
   .step {
-    font-size: 13px;
-    padding: 11px 12px;
-  }
-
-  .fieldRow {
-    font-size: 13px;
+    flex-basis: 135px;
   }
 }
 
-@media (max-width: 450px) {
+/* =========================================
+   MOBILE — Phones
+========================================= */
+
+@media (max-width: 600px) {
+  .app {
+    padding: 0 15px 26px;
+  }
+
   .topbar {
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 14px 15px;
     align-items: flex-start;
-    gap: 12px;
-    flex-direction: column;
+  }
+
+  .wordmark {
+    font-size: 18px;
+  }
+
+  .wordmark span {
+    font-size: 10px;
+    margin-left: 5px;
+  }
+
+  .tag {
+    font-size: 10px;
+  }
+
+  .hero {
+    padding: 25px 0 15px;
   }
 
   .hero h1 {
-    font-size: 29px;
+    font-size: clamp(25px, 7vw, 30px);
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
+
+  .heroSub {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .heroMeta {
+    font-size: 11px;
   }
 
   .pickerRow {
-    flex-direction: column;
+    gap: 12px;
+    margin: 17px 0;
+  }
+
+  .picker {
+    gap: 9px;
+    margin: 15px 0;
+  }
+
+  .pickBtn {
+    flex: 1 1 100%;
+    padding: 12px 13px;
+  }
+
+  .pickBtn .pickName {
+    font-size: 14px;
+  }
+
+  .pickBtn .pickMeta {
+    font-size: 12px;
   }
 
   .decisionBadge {
     width: 100%;
+    justify-content: start;
+  }
+
+  .processFlow {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin: 17px 0;
+  }
+
+  .step {
+    width: 100%;
+    min-width: 0;
+    padding: 11px 10px;
+    font-size: 12px;
+  }
+
+  .content {
+    padding: 17px 14px;
+    min-height: 0;
+    border-radius: 12px;
+  }
+
+  .panelTitle {
+    font-size: 19px;
+  }
+
+  .panelSub {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+
+  .docCard {
+    padding: 13px 12px;
+  }
+
+  .fieldRow {
+    font-size: 13px;
+    gap: 8px;
+  }
+
+  .ruleLabel {
+    font-size: 13px;
+  }
+
+  .ruleDetail {
+    font-size: 12px;
+  }
+
+  .verdictCard {
+    padding: 15px;
+  }
+
+  .verdictTitle {
+    font-size: 19px;
+  }
+
+  .verdictRoute {
+    font-size: 13px;
+  }
+
+  .auditRow {
+    font-size: 11px;
+  }
+
+  .whyBox {
+    font-size: 12px;
+    padding: 11px 12px;
+  }
+
+  .actionsRow {
+    margin-top: 17px;
+  }
+
+  .replayBtn {
+    width: 100%;
+    min-height: 46px;
+    font-size: 14px;
+  }
+
+  .siteFooter {
+    margin-top: 22px;
+    padding: 15px;
+    font-size: 12px;
+  }
+}
+
+/* Very narrow phones */
+
+@media (max-width: 360px) {
+  .app {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+
+  .topbar {
+    margin-left: -11px;
+    margin-right: -11px;
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+
+  .wordmark {
+    font-size: 16px;
+  }
+
+  .wordmark span {
+    font-size: 9px;
+  }
+
+  .hero h1 {
+    font-size: 25px;
+  }
+
+  .processFlow {
+    grid-template-columns: 1fr;
+  }
+
+  .content {
+    padding: 14px 11px;
+  }
+}
+
+/* Respect reduced-motion settings */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
